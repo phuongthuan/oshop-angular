@@ -1,5 +1,5 @@
-import { ProductService } from './product.service';
 import { CategoryService } from './category.service';
+import { ProductService } from './product.service';
 import { AuthGuard } from './auth-guard.service';
 import { LoginComponent } from './login/login.component';
 import { environment } from './../environments/environment';
@@ -31,6 +31,8 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
 
 
 import { CustomFormsModule } from 'ng2-validation';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { CustomFormsModule } from 'ng2-validation';
     AdminProductsComponent,
     AdminOrdersComponent,
     LoginComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductFilterComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +64,7 @@ import { CustomFormsModule } from 'ng2-validation';
     NgbModule.forRoot(),
     RouterModule.forRoot([
 
-      { path: '', component: HomeComponent },
+      { path: '', component: ProductsComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'login', component: LoginComponent },
@@ -97,8 +101,8 @@ import { CustomFormsModule } from 'ng2-validation';
     AuthService,
     AuthGuard,
     UserService,
-    AdminAuthGuard,
     CategoryService,
+    AdminAuthGuard,
     ProductService
   ],
   bootstrap: [AppComponent]
