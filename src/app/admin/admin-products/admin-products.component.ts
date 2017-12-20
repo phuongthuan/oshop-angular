@@ -11,10 +11,10 @@ import { Product } from '../../models/product';
 })
 export class AdminProductsComponent implements OnInit, OnDestroy {
 
-  products: Product[];
+  products: Product[] = [];
   
   subcription: Subscription;
-  filteredProducts: Product[];
+  filteredProducts: Product[] = [];
   
   constructor(private productService: ProductService) {
     this.productService.getAll()
